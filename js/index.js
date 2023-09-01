@@ -46,13 +46,14 @@ const handleLoadVideo = async (id) => {
     const cardContainer = document.getElementById("card-container")
     const nothingContainer = document.getElementById("nothing-container")
     cardContainer.innerHTML = "";
+    nothingContainer.innerHTML = "";
 
         if (data.data.length === 0){
 
             nothingContainer.innerHTML = `
                 <div class = "text-center mt-28 flex flex-col items-center">
                 <img src = "./images/icon.png" class = "mx-auto mb-5">
-                <p class = "mt-2">Oops!! Sorry, There is no content here</p>
+                <p class = "mt-2 text-3xl font-bold">Oops!! Sorry, There is no content here</p>
                 </div>
             `;
         }else{
@@ -78,9 +79,9 @@ const handleLoadVideo = async (id) => {
                                     <img src=${videos.authors[0].profile_picture} class="rounded-full w-10 h-10 ml-3 alt="">
                                 </div>
                                 <div class="">
-                                    <h2>${videos.title}</h2>
-                                    <p>${videos?.authors[0]?.profile_name} ${isVerified ? '<img class="inline-block" src="./images/verified.jpg">' : ''}</p> 
-                                    <p>${videos.others.views} views</p>
+                                    <h2 class="text-[#171717] text-base mb-1 font-bold">${videos.title}</h2>
+                                    <p class= "text-[#171717b3] text-sm">${videos?.authors[0]?.profile_name} ${isVerified ? '<img class="inline-block" src="./images/verified.jpg">' : ''}</p> 
+                                    <p class= "text-[#171717b3] text-sm mt-1">${videos.others.views} views</p>
                                 </div>
                               
                             </div>
@@ -98,9 +99,9 @@ const handleLoadVideo = async (id) => {
                                     <img src=${videos.authors[0].profile_picture} class="rounded-full w-10 h-10 ml-3 alt="">
                                 </div>
                                 <div class="">
-                                    <h2>${videos.title}</h2>
-                                    <p>${videos?.authors[0]?.profile_name} ${isVerified ? '<img class="inline-block" src="./images/verified.jpg">' : ''}</p> 
-                                    <p>${videos.others.views}  views</p>
+                                    <h2 class="text-[#171717] text-base mb-1 font-bold">${videos.title}</h2>
+                                    <p class= "text-[#171717b3] text-sm">${videos?.authors[0]?.profile_name} ${isVerified ? '<img class="inline-block" src="./images/verified.jpg">' : ''}</p> 
+                                    <p class= "text-[#171717b3] text-sm mt-1">${videos.others.views}  views</p>
                                 </div>
                               
                             </div>
@@ -120,6 +121,11 @@ const handleLoadVideo = async (id) => {
     
 };
 
+
+  
+function sortByView(){
+    
+}
 
 handleCategory();
 
